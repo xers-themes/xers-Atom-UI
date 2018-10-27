@@ -1,0 +1,143 @@
+.settings-view {
+	.config-menu {
+		min-width: 250px;
+	  max-width: 250px;
+		padding: 2em 2em;
+	  background: transparent;
+
+		.nav > li > a {
+			padding: 1em;
+		}
+
+		.nav > li.active.active > a {
+			background-color: @menu-active-background-color;
+			border-radius: @component-border-radius;
+		}
+		.nav > li > a:hover {
+			background-color: @menu-hover-background-color;
+			border-radius: @component-border-radius;
+		}
+
+		.button-area {
+			margin: 0;
+			margin-top: 1em;
+			.btn {
+				background: transparent;
+				color: @text-color-subtle;
+			}
+		}
+	}
+
+	.package-card {
+		padding: 2em;
+		background-color: @background-color-highlight;
+		position: relative;
+		overflow: visible;
+
+		.stats {
+		}
+
+		.body {
+		}
+
+		.meta {
+			display: flex;
+			align-items: center;
+			margin-top: 1em;
+
+			.meta-controls {
+				margin-top: 0;
+				display: flex;
+
+				.btn-group {
+					position: static;
+					margin: 0;
+					display: flex;
+			    align-items: center;
+			    flex-direction: row-reverse;
+
+					.btn {
+						height: 35px;
+						border: none;
+						margin-left: 0.5em;
+						&:last-of-type {
+							margin-left: 0;
+						}
+						&.icon {
+							background: transparent;
+							&:hover {
+								background: @menu-hover-background-color;
+							}
+						}
+						&.enablement {
+							background: @secondary-color--dark-2;
+							border-radius: @component-border-radius;
+						}
+						&.status-indicator.status-indicator.status-indicator {
+							width: 15px;
+							height: 15px;
+							border-radius: 0;
+							background: transparent;
+							border-radius: 50%;
+							margin-left: 0.5em;
+							margin-right: 1em;
+							background: @background-color-success;
+							&.is-disabled {
+								background: @background-color-warning;
+							}
+						}
+					}
+				}
+			}
+			.meta-user {
+				margin-top: 0;
+				font-size: 0.8em;
+				order: 2;
+				display: flex;
+				justify-content: flex-end;
+		    align-items: center;
+			}
+		}
+
+		.card-name {
+			margin-bottom: 1em;
+		}
+	}
+
+	select.form-control {
+		background-color: @input-background-color;
+	}
+
+	.alert-info {
+		background: @background-color-info;
+	}
+	.alert-warning {
+		background: @background-color-warning;
+	}
+	.alert-error {
+		background: @background-color-error;
+	}
+
+	.package-detail-view {
+		background: @background-color-highlight;
+		border-radius: @component-border-radius;
+		box-shadow: @component-box-shadow-3;
+		.package-card {
+			border: none;
+			border-radius: 0;
+			.meta .meta-controls .btn-toolbar .btn {
+				background: @background-color-success;
+				font-weight: 500;
+				padding: 0.25em 1.5em;
+				display: flex;
+				align-items: center;
+			}
+		}
+		.link {
+			color: @text-color-subtle;
+		}
+		.btn {
+			background: transparent;
+		}
+	}
+}

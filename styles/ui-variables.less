@@ -1,6 +1,23 @@
+// https://mycolor.space/?hex=%232B303B&sub=1
+// https://hihayk.github.io/scale/#4/6/50/76/-51/360/35/14/2B303B/43/48/59
+// https://noeldelgado.github.io/shadowlord/#2B303B
 
 // UI Variables
 // -------------------
+@slateGray: hsl(221, 16%, 20%);
+@chatelle: hsl(285, 5%, 70%);
+@pink: hsl(349, 21%, 73%);
+@pink--dark-1: hsl(352, 5%, 40%);
+@pink--dark-2: hsl(349, 7%, 44%);
+@pink--dark-3: hsl(349, 7%, 29%);
+@orange: hsl(39, 30%, 46%);
+@blue: hsl(203, 30%, 50%);
+@blue--light-2: hsl(220, 20%, 80%);
+@green: hsl(163, 30%, 39%);
+@yellow: hsl(55, 30%, 60%);
+@red: hsl(0, 30%, 66%);
+
+@scorpion: hsl(352, 5%, 40%);
 
 // These are the official UI variables that every UI theme should define.
 // It allows other packages to match your theme.
@@ -11,37 +28,67 @@
 // A good start is to change the color of the `@base-background-color` variable.
 
 
-// Text Colors
-@text-color:           hsl(0,0%,66%);
-@text-color-subtle:    hsl(0,0%,50%);
-@text-color-highlight: hsl(0,0%,94%);
-@text-color-selected:  hsl(0,0%,100%);
 
-@text-color-info:    hsl(219,  79%, 66%);
-@text-color-success: hsl(140,  44%, 62%);
-@text-color-warning: hsl( 36,  60%, 72%);
-@text-color-error:   hsl(  9, 100%, 64%);
-
-// Background colors
-@background-color-info:    hsl(208, 100%, 50%);
-@background-color-success: hsl(160,  70%, 36%);
-@background-color-warning: hsl(32,   60%, 50%);
-@background-color-error:   hsl(0,    70%, 50%);
-
-@background-color-highlight: lighten(@base-background-color, 5%);
-@background-color-selected:  lighten(@base-background-color, 10%);
-@app-background-color:       darken(@base-background-color, 5%);
 
 // Base colors
-@base-background-color: hsl(222,6%,22%);
-@base-border-color:     darken(@base-background-color, 8%);
+@main-color: @slateGray;
+@secondary-color: @scorpion;
+@secondary-color--light-1: mix(white, @secondary-color, 10%);
+@secondary-color--dark-1: mix(@base-background-color, @secondary-color, 20%);
+@secondary-color--dark-2: mix(@base-background-color, @secondary-color, 40%);
+@secondary-color--dark-3: mix(@base-background-color, @secondary-color, 60%);
+@secondary-color--dark-4: mix(@base-background-color, @secondary-color, 80%);
+
+@base-background-color: @slateGray;
+@base-border-color:     lighten(@base-background-color, 2%);
+
+
+// Text Colors
+@text-color:           @chatelle;
+@text-color-subtle:    mix(white, @base-background-color, 30%);
+@text-color-highlight: mix(white, @text-color, 30%);
+@text-color-selected:  mix(white, @base-background-color, 80%);
+
+@text-color-info:    @blue;
+@text-color-success: @green;
+@text-color-warning: @yellow;
+@text-color-error:   @red;
+
+// Background colors
+@background-color-info:    @blue;
+@background-color-success: @green;
+@background-color-warning: @yellow;
+@background-color-error:   @red;
+
+@background-color-highlight: mix(white, @base-background-color, 5%);
+@background-color-selected:  @secondary-color--dark-3;
+@app-background-color:       mix(@text-color, @base-background-color, 15%);
+
+// Misc
+@component-border-radius: 3px;
+@component-box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+@component-box-shadow-2: 0 3px 60px 0 rgba(0, 0, 0, 0.07);
+@component-box-shadow-3: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
+@font-family: 'Google Sans', 'Roboto', Ubuntu, 'Segoe UI', Cantarell, sans-serif;
+
+// Menu
+@menu-active-background-color: @background-color-selected;
+@menu-hover-background-color: @background-color-highlight;
 
 // Component colors
 @pane-item-background-color: @base-background-color;
 @pane-item-border-color:     @base-border-color;
 
-@input-background-color: @app-background-color;
+
+// Inputs
+@input-background-color: @background-color-highlight;
 @input-border-color:     @base-border-color;
+@input-placeholder:  @text-color-subtle;
+@input-color:  @blue--light-2;
+
+// Tooltips
+@tooltip-background-color: @background-color-highlight;
+@tooltip-box-shadow: @component-box-shadow;
 
 @tool-panel-background-color: @base-background-color;
 @tool-panel-border-color:     @base-border-color;
@@ -52,32 +99,42 @@
 @panel-heading-background-color: lighten(@base-background-color, 4%);
 @panel-heading-border-color:     @base-border-color;
 
-@overlay-background-color: lighten(@base-background-color, 5%);
+
+// Overlay
+@overlay-background-color: @base-border-color;
 @overlay-border-color:     @base-border-color;
 
-@button-background-color:          lighten(@base-background-color, 10%);
+
+// Buttons
+@button-background-color:          @secondary-color;
 @button-background-color-hover:    lighten(@button-background-color, 12%);
 @button-background-color-selected: @button-background-color-hover;
 @button-border-color:              @base-border-color;
 
-@tab-bar-background-color:    @base-background-color;
-@tab-bar-border-color:        @base-border-color;
-@tab-background-color:        @tab-bar-background-color;
-@tab-background-color-active: lighten(@tab-bar-background-color, 10%);
-@tab-border-color:            @base-border-color;
 
+// Tabs
+@tab-bar-background-color:    @base-background-color;
+@tab-bar-border-color:        @base-background-color;
+@tab-bar-box-shadow:          none;
+@tab-background-color:        @base-background-color;
+@tab-background-color-active: hsla(0, 0%, 0%, 0.1);
+@tab-border-color:            hsla(0, 0%, 100%, 0.03);
+@tab-box-shadow:              @component-box-shadow;
+@tab-hover-background-color:  mix(white, @base-background-color, 5%);
+
+// Tree view
 @tree-view-background-color: @base-background-color;
-@tree-view-border-color:     @base-border-color;
+@tree-view-border-color:     @base-background-color
 
 // Site colors
-@ui-site-color-1: hsl(208, 100%, 50%); // blue
-@ui-site-color-2: hsl(160,  70%, 42%); // green
-@ui-site-color-3: hsl(32,   60%, 50%); // orange
-@ui-site-color-4: #D831B0;             // pink
-@ui-site-color-5: #EBDD5B;             // yellow
+@ui-site-color-1: @blue;
+@ui-site-color-2: @green;
+@ui-site-color-3: @orange;
+@ui-site-color-4: @pink;
+@ui-site-color-5: @yellow;
 
 // Sizes
-@font-size: 12px;
+@font-size: 13px;
 @input-font-size: 14px;
 
 @disclosure-arrow-size: 12px;
@@ -85,10 +142,13 @@
 @component-padding: 10px;
 @component-icon-padding: 5px;
 @component-icon-size: 16px;
-@component-line-height: 25px;
+@component-line-height: 28px;
 
-@tab-height: 30px;
+@tab-height: 60px;
 
-// Misc
-@component-border-radius: 2px;
-@font-family: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+// Modal
+@modal-background: hsla(330, 2%, 27%, 0.95);
+
+// Command pallet
+@command-pallete-background: hsl(221, 16%, 20%);
+@command-pallete-color: hsl(231, 19%, 86%);

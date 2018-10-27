@@ -8,10 +8,26 @@
 .tooltip {
   .tooltip-inner {
     line-height: 1;
-    padding: .75em;
+    padding: 1em 1.5em;
     white-space: nowrap;
     max-width: none;
+		border-radius: @component-border-radius;
+		font-size: 0.9em;
+		font-weight: 400;
+		background-color: @tooltip-background-color;
+		color: @text-color;
+		box-shadow: @tooltip-box-shadow;
   }
+	&.bottom .tooltip-arrow,
+	&.top .tooltip-arrow {
+		border-top-color: @tooltip-background-color;
+		border-bottom-color: @tooltip-background-color;
+	}
+	&.left .tooltip-arrow,
+	&.right .tooltip-arrow {
+		border-right-color: @tooltip-background-color;
+		border-left-color: @tooltip-background-color;
+	}
 
   .keystroke {
     padding: .15em .4em;
