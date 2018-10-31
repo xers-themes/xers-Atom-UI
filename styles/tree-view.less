@@ -5,10 +5,6 @@
 // Used to explore and open files in the current project.
 // Overrides: atom/tree-view
 
-.tree-view-root {
-	padding-left: 2em;
-}
-
 .tree-view-resizer {
   border-right: 1px solid @base-border-color;
 	font-weight: 500;
@@ -22,10 +18,16 @@
   .list-item.selected {
     color: @text-color-selected;
   }
+
+	.tree-view-root {
+		padding-left: 2em;
+	}
 }
 
-.project-root:not(:only-child) .project-root-header {
+.project-root-header {
 	font-weight: bold;
 	color: @tree-view-project-color;
-	text-decoration: underline;
+}
+.project-root:not(:only-child) .project-root-header {
+		text-decoration: underline;
 }
