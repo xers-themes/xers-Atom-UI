@@ -66,3 +66,20 @@
     }
   }
 }
+
+.tab-bar[location="bottom"] {
+	padding: 0;
+	border-top: 2px solid @tab-background-color-active;
+	margin-bottom: 1em;
+	& .tab {
+		height: @tab-height / 2;
+    line-height: @tab-height / 2;
+    font-size: 0.9em;
+    background-color: @tab-background-color;
+		&.active {
+      color: @text-color-selected;
+      background-color: @tab-background-color-active;
+			box-shadow: none;
+    }
+	}
+}
