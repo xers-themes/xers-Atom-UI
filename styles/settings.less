@@ -32,7 +32,7 @@
 		padding: 2em;
 		background-color: @background-color-highlight;
 		position: relative;
-		overflow: visible;
+		overflow: hidden;
 
 		.stats {
 		}
@@ -60,6 +60,7 @@
 						height: 35px;
 						border: none;
 						margin-left: 0.5em;
+						border-radius: @component-border-radius;
 						&:last-of-type {
 							margin-left: 0;
 						}
@@ -82,8 +83,17 @@
 							margin-left: 0.5em;
 							margin-right: 1em;
 							background: @background-color-success;
+							padding: 0;
 							&.is-disabled {
 								background: @background-color-warning;
+							}
+						}
+						&.install-button {
+							background-color: @background-color-success;
+							margin-right: 1em;
+							box-shadow: -50px 50px 0 90px hsla(0, 0%, 94%, 0.05);
+							&:hover {
+								background-color: darken(@background-color-success, 10%);
 							}
 						}
 					}
