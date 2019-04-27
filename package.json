@@ -11,5 +11,10 @@
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
+  },
+  "apmInstallSource": {
+    "type": "git",
+    "source": "https://github.com/xers-themes/xers-Atom-UI",
+    "sha": "68846a56f142f2287c334b66cbd8c3a98aee80b4"
   }
 }
