@@ -1,4 +1,4 @@
-![xers theme logo](./xers-logo.svg)
+<img src="./xers-logo.svg" alt="xers theme logo" height="250">
 
 # xers: the Atom UI theme
 __xers__  🐻 means bear; and here is a UI theme so simple and clean, that it actually pushes the interface out of your way, for the sake of more focus on code 👨🏻‍💻👩🏻‍💻
