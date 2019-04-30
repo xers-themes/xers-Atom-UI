@@ -1,7 +1,7 @@
 {
 	"name": "xers-ui",
 	"theme": "ui",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Atom UI theme with smooth look, which stays out of your way 😎🐻",
 	"keywords": [
 		"ui",
