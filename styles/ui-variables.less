@@ -19,16 +19,6 @@
 
 @scorpion: hsl(352, 5%, 40%);
 
-// These are the official UI variables that every UI theme should define.
-// It allows other packages to match your theme.
-
-// Overrides: atom/static/variables/ui-variables.less
-
-// Try to edit some of the values below to see your theme change.
-// A good start is to change the color of the `@base-background-color` variable.
-
-
-
 
 // Base colors
 @main-color: @slateGray;
@@ -40,6 +30,7 @@
 @secondary-color--dark-4: mix(@base-background-color, @secondary-color, 80%);
 
 @base-background-color: @slateGray;
+@base-background-color--light-1: mix(white, @base-background-color, 5%);
 @base-border-color:     lighten(@base-background-color, 2%);
 
 
@@ -60,7 +51,7 @@
 @background-color-warning: @yellow;
 @background-color-error:   @red;
 
-@background-color-highlight: mix(white, @base-background-color, 5%);
+@background-color-highlight: @base-background-color--light-1;
 @background-color-selected:  @secondary-color--dark-3;
 @app-background-color:       mix(@text-color, @base-background-color, 15%);
 
