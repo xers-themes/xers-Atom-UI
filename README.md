@@ -1,10 +1,10 @@
-<img src="./xers-logo.svg" alt="xers theme logo" height="250">
+<img src="./Logo.png" alt="xers theme logo" height="250">
 
 # xers: the Atom UI theme
 __xers__  🐻 means bear; and here is a UI theme so simple and clean, that it actually pushes the interface out of your way, for the sake of more focus on code 👨🏻‍💻👩🏻‍💻
 
 # 🖍 Color palette
-![xers ui theme colors](./xers-colors.svg)
+![xers ui theme colors](./Colors.png)
 
 # 😗 Interface
 ![xers ui theme - overview](./Overview.png)
