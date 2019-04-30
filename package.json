@@ -1,20 +1,15 @@
 {
-  "name": "xers-ui",
-  "theme": "ui",
-  "version": "1.0.0",
-  "description": "Atom UI theme with smooth look, which stays out of your way 😎🐻",
-  "keywords": [
-    "ui",
-    "theme"
-  ],
-  "repository": "git@github.com:xers-themes/xers-Atom-UI.git",
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
-  },
-  "apmInstallSource": {
-    "type": "git",
-    "source": "https://github.com/xers-themes/xers-Atom-UI",
-    "sha": "68846a56f142f2287c334b66cbd8c3a98aee80b4"
-  }
+	"name": "xers-ui",
+	"theme": "ui",
+	"version": "0.0.0",
+	"description": "Atom UI theme with smooth look, which stays out of your way 😎🐻",
+	"keywords": [
+		"ui",
+		"theme"
+	],
+	"repository": "https://github.com/xers-themes/xers-Atom-UI",
+	"license": "MIT",
+	"engines": {
+		"atom": ">=1.0.0 <2.0.0"
+	}
 }
