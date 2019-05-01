@@ -3,6 +3,8 @@
 # xers: the Atom UI theme
 __xers__  🐻 means bear; and here is a UI theme so simple and clean, that it actually pushes the interface out of your way, for the sake of more focus on code 👨🏻‍💻👩🏻‍💻
 
+Install the matching [_xers: the Atom syntax theme_](https://atom.io/themes/xers-syntax)
+
 # 🖍 Color palette
 ![xers ui theme colors](./Colors.png)
 
