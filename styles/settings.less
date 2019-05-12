@@ -108,6 +108,12 @@
 					min-width: 120px;
 					border-radius: 0 10px 10px 0;
 					overflow: hidden;
+					&:not(:last-of-type):not([style="display: none"]) {
+						border-radius: 0;
+						.btn {
+							border-radius: 0;
+						}
+					}
 
 					.btn {
 						border: none;
@@ -118,6 +124,10 @@
 						justify-content: center;
 						background-color: @package-card-background;
 						border-left: 1px solid rgba(255, 255, 255, 0.1);
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						min-height: 4em;
 						&:hover {
 							background-color: @background-color-success !important;
 						}
@@ -129,23 +139,17 @@
 							border-top-right-radius: 0;
 							margin-left: 0;
 						}
+						&.icon {
+							&:before {
+								position: relative;
+								top: -2px;
+							}
+						}
 						&.enablement {
-							background: @secondary-color--dark-2;
-							border-radius: @component-border-radius;
+							background: rgba(255, 255, 255, 0.2);
 						}
 						&.status-indicator.status-indicator.status-indicator {
-							width: 15px;
-							height: 15px;
-							border-radius: 0;
-							background: transparent;
-							border-radius: 50%;
-							margin-left: 0.5em;
-							margin-right: 1em;
-							background: @background-color-success;
-							padding: 0;
-							&.is-disabled {
-								background: @background-color-warning;
-							}
+							display: none;
 						}
 						&.install-button {
 							&:hover {
