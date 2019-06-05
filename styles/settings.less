@@ -1,9 +1,14 @@
+@package-card-background: #3a4454;
+@package-card-install-button-background: @background-color-success;
+@package-card-installing-button-background: @base-background-color--light-1;
+
+
 .settings-view {
 	.config-menu {
 		min-width: 250px;
-	  max-width: 250px;
+		max-width: 250px;
 		padding: 2em 2em;
-	  background: transparent;
+		background: transparent;
 
 		.nav > li > a {
 			padding: 1em;
@@ -28,72 +33,141 @@
 		}
 	}
 
-	.package-card {
-		padding: 2em;
-		background-color: @background-color-highlight;
+	.section-container {
+		max-width: 1000px;
+	}
+
+	.package-card.package-card {
+		padding: 0;
 		position: relative;
 		overflow: hidden;
+		display: flex;
+		border: none;
+		background-color: transparent;
+		:hover {
+			background-color: transparent;
+		}
+
+		.package-name {
+			font-weight: 900;
+		}
 
 		.stats {
+			order: 3;
+			font-size: 0.8em;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			padding: 1em;
+			background-color: @base-background-color;
+			border: none;
+			width: 80px;
+			flex-shrink: 0;
+
+			.stats-item {
+				display: flex !important;
+				margin-left: 0;
+				height: auto;
+			}
 		}
 
 		.body {
+			order: 1;
+			flex-grow: 1;
+			border-radius: 10px 0 0 10px;
+			background-color: @package-card-background;
+			padding: 1em;
+			&:hover {
+				background-color: mix(white, @package-card-background, 2%);
+			}
 		}
 
 		.meta {
+			order: 2;
 			display: flex;
-			align-items: center;
-			margin-top: 1em;
+			flex-direction: column;
+			width: auto;
+			margin-right: 2em;
+			margin-left: 0.45em;
 
 			.meta-controls {
 				margin-top: 0;
 				display: flex;
+				flex-grow: 1;
+
+				.btn-toolbar {
+					display: flex;
+				}
 
 				.btn-group {
 					position: static;
 					margin: 0;
 					display: flex;
-			    align-items: center;
-			    flex-direction: row-reverse;
+					flex-direction: column;
+					min-width: 120px;
+					border-radius: 0 10px 10px 0;
+					overflow: hidden;
+					&:not(:last-of-type):not([style="display: none"]) {
+						border-radius: 0;
+						.btn {
+							border-radius: 0;
+						}
+					}
 
 					.btn {
-						height: 35px;
 						border: none;
-						margin-left: 0.5em;
-						border-radius: @component-border-radius;
-						&:last-of-type {
+						display: flex;
+						align-items: center;
+						height: 100%;
+						padding: 0 2em;
+						justify-content: center;
+						background-color: @package-card-background;
+						border-left: 1px solid rgba(255, 255, 255, 0.1);
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						min-height: 4em;
+						&:hover {
+							background-color: @background-color-success !important;
+						}
+						&:first-of-type {
+							border-bottom-right-radius: 0;
+						}
+						&:nth-child(n+2) {
+							border-top: 1px solid rgba(255, 255, 255, 0.1);
+							border-top-right-radius: 0;
 							margin-left: 0;
 						}
 						&.icon {
-							background: transparent;
-							&:hover {
-								background: @menu-hover-background-color;
+							&:before {
+								position: relative;
+								top: -2px;
 							}
 						}
 						&.enablement {
-							background: @secondary-color--dark-2;
-							border-radius: @component-border-radius;
+							background: rgba(255, 255, 255, 0.2);
 						}
 						&.status-indicator.status-indicator.status-indicator {
-							width: 15px;
-							height: 15px;
-							border-radius: 0;
-							background: transparent;
-							border-radius: 50%;
-							margin-left: 0.5em;
-							margin-right: 1em;
-							background: @background-color-success;
-							padding: 0;
-							&.is-disabled {
-								background: @background-color-warning;
-							}
+							display: none;
 						}
 						&.install-button {
-							background-color: @background-color-success;
-							margin-right: 1em;
-							box-shadow: -50px 50px 0 90px hsla(0, 0%, 94%, 0.05);
 							&:hover {
-								background-color: darken(@background-color-success, 10%);
+								background-color: @background-color-success !important;
+							}
+							&.is-installing {
+								background-color: @package-card-installing-button-background;
+								-webkit-animation: available-package-is-installing 0.5s linear infinite;
+								background-image: linear-gradient(to right, transparent 50%, rgba(0, 0, 0, 0.15) 50%);
+								background-size: 10px 100%;
+								&:after {
+									content: 'ing...';
+								}
+							}
+						}
+						&.uninstall-button {
+							&:hover {
+								background-color: @background-color-error !important;
 							}
 						}
 					}
@@ -101,16 +175,33 @@
 			}
 			.meta-user {
 				margin-top: 0;
+				margin-right: 0;
 				font-size: 0.8em;
 				order: 2;
 				display: flex;
-				justify-content: flex-end;
-		    align-items: center;
+				align-items: center;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform: translate(1.2em, 3.5em);
+			}
+		}
+
+		.meta-user {
+			.avatar {
+				width: 18px;
+				height: 18px;
+				opacity: 0.7;
+			}
+
+			.author {
+				font-weight: 900;
+				margin-left: 0.3em;
 			}
 		}
 
 		.card-name {
-			margin-bottom: 1em;
+			margin-bottom: 2em;
 		}
 	}
 
@@ -130,12 +221,24 @@
 	}
 
 	.package-detail-view {
-		background: @background-color-highlight;
-		border-radius: @component-border-radius;
-		box-shadow: @component-box-shadow-3;
 		.package-card {
-			border: none;
-			border-radius: 0;
+			border-bottom: 0;
+			&:hover {
+				background-color: transparent;
+			}
+			.meta {
+				.meta-controls {
+					.btn-toolbar {
+						.btn-group {
+						}
+					}
+				}
+			}
+			.body {
+
+			}
+			.stats {
+			}
 			.meta .meta-controls .btn-toolbar .btn {
 				background: @background-color-success;
 				font-weight: 500;
