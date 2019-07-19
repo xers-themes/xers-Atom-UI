@@ -4,33 +4,37 @@
 
 // UI Variables
 // -------------------
-@slateGray: hsl(221, 16%, 20%);
+@slateGray: hsl(210, 15%, 20%);
 @chatelle: hsl(285, 5%, 70%);
-@pink: hsl(349, 21%, 73%);
+@pink: #ffd9fe;
 @pink--dark-1: hsl(352, 5%, 40%);
 @pink--dark-2: hsl(349, 7%, 44%);
 @pink--dark-3: hsl(349, 7%, 29%);
 @orange: hsl(39, 30%, 46%);
 @blue: hsl(203, 30%, 50%);
 @blue--light-2: hsl(220, 20%, 80%);
-@green: hsl(163, 30%, 39%);
+@green: #1A997F;
 @yellow: hsl(55, 30%, 60%);
 @red: hsl(0, 30%, 66%);
-
+@abbey: #515b5e;
 @scorpion: hsl(352, 5%, 40%);
 
 
 // Base colors
 @main-color: @slateGray;
-@secondary-color: @scorpion;
+@main-color--light-1: mix(white, @main-color, 2%);
+
+@secondary-color: @abbey;
 @secondary-color--light-1: mix(white, @secondary-color, 10%);
 @secondary-color--dark-1: mix(@base-background-color, @secondary-color, 20%);
 @secondary-color--dark-2: mix(@base-background-color, @secondary-color, 40%);
 @secondary-color--dark-3: mix(@base-background-color, @secondary-color, 60%);
 @secondary-color--dark-4: mix(@base-background-color, @secondary-color, 80%);
 
-@base-background-color: @slateGray;
-@base-background-color--light-1: mix(white, @base-background-color, 5%);
+@base-background-color: #2B303B;
+@base-background-color--light-1: #313641;
+@base-background-color--dark-1: #2A2F39;
+@base-background-color--dark-2: #282D37;
 @base-border-color:     lighten(@base-background-color, 2%);
 
 
@@ -39,6 +43,7 @@
 @text-color-subtle:    mix(white, @base-background-color, 30%);
 @text-color-highlight: mix(white, @text-color, 30%);
 @text-color-selected:  mix(white, @base-background-color, 80%);
+@text-color--dark: #333333;
 
 @text-color-info:    @blue;
 @text-color-success: @green;
@@ -90,6 +95,8 @@
 @panel-heading-background-color: lighten(@base-background-color, 4%);
 @panel-heading-border-color:     @base-border-color;
 
+@panel-footer-backgroung-color: @pink;
+
 
 // Overlay
 @overlay-background-color: @base-border-color;
@@ -98,18 +105,18 @@
 
 // Buttons
 @button-background-color:          @secondary-color;
-@button-background-color-hover:    lighten(@button-background-color, 12%);
-@button-background-color-selected: @button-background-color-hover;
+@button-background-color-hover:    @secondary-color--dark-1;
+@button-background-color-selected: @secondary-color--dark-2;
 @button-border-color:              @base-border-color;
 
 
 // Tabs
 @tab-bar-background-color:    @base-background-color;
-@tab-bar-border-color:        @base-background-color;
+@tab-bar-border-color:        @pink;
 @tab-bar-box-shadow:          none;
 @tab-background-color:        @base-background-color;
 @tab-background-color-active: mix(@secondary-color, @tab-background-color, 10%);
-@tab-border-color:            hsla(0, 0%, 100%, 0.03);
+@tab-border-color:            @pink;
 @tab-box-shadow:              @component-box-shadow;
 @tab-hover-background-color:  mix(white, @base-background-color, 5%);
 
@@ -139,8 +146,11 @@
 @tab-height: 60px;
 
 // Modal
-@modal-background: hsla(330, 2%, 27%, 0.95);
+@modal-background: fadeout(@secondary-color--dark-3, 10%);
 
 // Command pallet
 @command-pallete-background: hsl(221, 16%, 20%);
 @command-pallete-color: hsl(231, 19%, 86%);
+
+// Status bar
+@statusbar-background-color: mix(@base-background-color--dark-2, @green);

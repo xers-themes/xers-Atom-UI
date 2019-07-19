@@ -15,3 +15,24 @@
     background-color: lighten(@inset-panel-background-color, 4%);
   }
 }
+
+
+atom-dock {
+  &.right {
+    border-left: 3px solid @inset-panel-background-color;
+    atom-pane-container {
+      background-color: @base-background-color--dark-1;
+    }
+  }
+  &.bottom {
+    atom-pane-container {
+      background-color: @base-background-color--dark-1;
+    }
+  }
+  
+  &.footer {
+    atom-panel {
+      background-color: @panel-footer-backgroung-color;
+    }
+  }
+}
