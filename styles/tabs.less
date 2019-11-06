@@ -7,9 +7,9 @@
 
 .tab-bar {
   background-color: @tab-bar-background-color;
-	box-shadow: @tab-bar-box-shadow;
-	z-index: 2;
-	padding: 1em 2em;
+  box-shadow: @tab-bar-box-shadow;
+  z-index: 2;
+  padding: 1em 2em;
 
   .tab {
     color: @text-color;
@@ -17,42 +17,50 @@
     line-height: @tab-height;
     font-size: @font-size;
     background-color: @tab-background-color;
-		font-weight: 500;
-		border-radius: @component-border-radius;
-		max-width: 15em !important;
+    font-weight: 500;
+    border-radius: @component-border-radius;
+    max-width: 15em !important;
     border: 2px solid transparent;
     background-color: fadein(@tab-background-color-active, 50%);
     cursor: pointer;
     transition: border-color 0.25s;
-		&.active {
+
+    .title {
+      white-space: nowrap;
+    }
+
+    &.active {
       color: @text-color-selected;
       background-color: @tab-background-color-active;
-			box-shadow: @tab-box-shadow;
+      box-shadow: @tab-box-shadow;
     }
 
 
     // Modified Icon (the circle) -------------------
     &.modified:not(:hover) .close-icon {
-      top: 50%;s
+      top: 50%;
       right: @component-padding + 4px; // 4px -> half of icon size
       margin-top: -6px;
       border-color: @text-color-info;
-			width: 12px;
-			height: 12px;
-			border-radius: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 0;
     }
+
     &.modified:hover .close-iconc {
       color: currentColor;
     }
 
 
     // Close Icon (the X) -------------------
-		.close-icon {
-			transition: opacity 0.15s, color 0.15s;
-		}
+    .close-icon {
+      transition: opacity 0.15s, color 0.15s;
+    }
+
     .close-icon:hover {
       color: @ui-site-color-5;
     }
+
     &.active .close-icon:hover {
       color: @ui-site-color-5;
     }
@@ -64,6 +72,7 @@
       background: @text-color-subtle;
       border-color: transparent;
       opacity: 0.5;
+
       & .close-icon {
         visibility: hidden;
       }
@@ -75,6 +84,7 @@
   .tab {
     background-color: rgba(255, 255, 255, 0.02);
     margin-right: 1rem;
+
     &.active {
       box-shadow: 0 25px 80px -20px fadeout(@tab-border-color, 80%);
       border: 2px solid @tab-bar-border-color;
@@ -97,24 +107,25 @@
 .tab-bar[location="bottom"],
 .tab-bar[location="undefined"],
 .tab-bar[location="right"] {
-	padding: 0;
-	border-top: 2px solid @tab-background-color-active;
-	margin-bottom: 1em;
+  padding: 0;
+  border-top: 2px solid @tab-background-color-active;
+  margin-bottom: 1em;
   background-color: rgba(255, 255, 255, 0.02);
   margin-right: 1rem;
-  
-	& .tab {
-		height: @tab-height / 1.5;
+
+  & .tab {
+    height: @tab-height / 1.5;
     line-height: @tab-height / 1.6;
     font-size: 0.9em;
     background-color: transparent;
     border-radius: 0;
     padding: 0;
+
     &.active {
       box-shadow: 0 25px 80px -20px rgba(185, 183, 87, 0.2);
       background-color: @base-background-color--dark-2;
     }
-	}
+  }
 }
 
 
