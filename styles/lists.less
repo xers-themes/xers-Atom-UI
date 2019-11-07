@@ -7,89 +7,116 @@
 
 // List Group -------------------
 .list-group {
-	li {
-		padding-left: @component-padding/2;
+  li {
+    padding-left: @component-padding/2;
 
-		// We want to highlight the background of the list items because we dont know their size.
-		&.selected {
-			color: white;
-			background-color: mix(white, @command-pallete-background, 3%);
+    // We want to highlight the background of the list items because we dont know their size.
+    &.selected {
+      color: white;
+      background-color: mix(white, @command-pallete-background, 3%);
+      box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.2);
 
-			box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.2);
-			&:before{
-				display: none;
-			}
-		}
-	}
+      &::before {
+        display: none;
+      }
+    }
+  }
 }
 
 
 // List Tree -------------------
 .list-tree {
-	color: @text-color;
-	.selected {
-		color: @text-color-selected;
-	}
+  color: @text-color;
+
+  .selected {
+    color: @text-color-selected;
+  }
 }
 
 
 // Select List -------------------
 .select-list {
-	li {
-		padding: @component-padding/2 @component-padding;
-	}
-	.status {
-		float: right;
-	}
+  li {
+    padding: @component-padding/2 @component-padding;
+  }
+
+  .status {
+    float: right;
+  }
 }
 
 
 // Popover List -------------------
 // Used as a popover for something like autocomplete.
 .select-list.popover-list {
-	@popover-list-padding: @component-padding/2;
+  @popover-list-padding: @component-padding/2;
 
-	padding: @popover-list-padding ;
-	border-radius: @component-border-radius;
-	background-color: @background-color-selected;
+  padding: @popover-list-padding;
+  border-radius: @component-border-radius;
+  background-color: @background-color-selected;
 
-	.list-group {
-		margin-top: @popover-list-padding;
-		li {
-			padding-left: @popover-list-padding;
-		}
-	}
+  .list-group {
+    margin-top: @popover-list-padding;
+
+    li {
+      padding-left: @popover-list-padding;
+    }
+  }
 }
 
 
 
-.select-list, .command-palette, .list, .advanced-open-file {
-	width: 50em;
-	background-color: @command-pallete-background;
-	padding: 1em;
-	font-weight: 500;
-	font-family: 'Operator mono Lig', @font-family;
+.select-list,
+.command-palette,
+.list,
+.advanced-open-file {
+  width: 50em;
+  background-color: @command-pallete-background;
+  padding: 1em;
+  font-weight: 500;
+  font-family: 'Operator mono Lig', @font-family;
 
-	.editor.mini {
-		margin-bottom: 1em;
-		padding-left: 8px;
-		color: @text-color-highlight;
-		background-color: mix(white, @command-pallete-background, 10%);
-	}
+  .editor.mini {
+    margin-bottom: 1em;
+    padding-left: 8px;
+    color: @text-color-highlight;
+    background-color: mix(white, @command-pallete-background, 10%);
+  }
 
-	.list-group li.selected {
-		box-shadow: @component-box-shadow;
-		border-radius: @component-border-radius;
-	}
+  .list-group li.selected {
+    box-shadow: @component-box-shadow;
+    border-radius: @component-border-radius;
+  }
 }
 
 .command-palette .list-group .character-match {
-	color: @background-color-warning;
+  color: @background-color-warning;
 }
 
 
 .select-list .editor.mini {
-	padding: 0.3em 1em;
-	max-height: none;
-	font-size: 1.2em;
+  padding: 0.3em 1em;
+  max-height: none;
+  font-size: 1.2em;
+}
+
+.symbols-list {
+  .editor.mini {
+    padding: 0 1rem;
+    max-height: none;
+    font-size: 1rem;
+  }
+
+  .select-list {
+    box-shadow: none;
+    width: auto;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .list-group {
+    li {
+      padding: 0.5rem 1rem;
+    }
+  }
 }
